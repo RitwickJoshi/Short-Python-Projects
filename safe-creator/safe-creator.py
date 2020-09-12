@@ -35,7 +35,7 @@ if __name__ == "__main__":
             #getting password from user database
             query = 'SELECT PSSWORD FROM USER_TABLE WHERE USERNAME=?'
             auth_cursor.execute(query,(input_username, ))
-            db_passwd = auth_cursor.fetchall()
+            db_passwd = auth_cursor.fetchone()
             print(db_passwd)
             for psswd in db_passwd:
                 if psswd == input_password:
